@@ -18,7 +18,7 @@ function Register({ onRouteChange, loadUser }) {
   }
 
   function onSubmitSignIn() {
-    fetch("http://localhost:3002/register", {
+    fetch("https://intense-stream-96688.herokuapp.com/register", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
