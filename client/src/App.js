@@ -79,7 +79,7 @@ function App() {
         .then((response) => response.json())
         .then((response) => {
           if (response) {
-            fetch("https://intense-stream-96688.herokuapp.com:3002/image", {
+            fetch("https://intense-stream-96688.herokuapp.com:3000/image", {
               method: "put",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({
