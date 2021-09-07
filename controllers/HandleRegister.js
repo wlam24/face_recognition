@@ -1,15 +1,11 @@
 function HandleRegister(req, res, db, bcrypt) {
-
-  console.info({ db, body: req.body })
   const { email, name, password } = req.body;
   if (!email || !name || !password) {
     res.status(400).json('incorrect form submission');
   }
   const saltRounds = 10;
   const hash = bcrypt.hashSync(password, saltRounds);
-  console.info({ hash })
   db.transaction(trx => {
-    console.info({ trx })
     trx.insert({
       hash: hash,
       email: email
@@ -32,7 +28,7 @@ function HandleRegister(req, res, db, bcrypt) {
     .catch(trx.rollback)
   })
   .catch(err => {
-    console.error('Error......', err)
+    console.error('Error registering:', err)
     res.status(400).json('Unable to register!')
   })
 };
