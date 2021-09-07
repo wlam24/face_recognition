@@ -12,7 +12,7 @@ import HandleApiCall  from './controllers/HandleApiCall.js';
 const db = knex({
   client: 'pg',
   connection: {
-    host : '127.0.0.1',
+    host : 'postgresql-elliptical-22283',
     user : 'winston.lam',
     password : '',
     database : 'smart-brain'
